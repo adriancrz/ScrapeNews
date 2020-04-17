@@ -15,6 +15,7 @@ router.get("/saved", function(req, res) {
   db.Headline.find({ saved: true })
     .sort({ date: -1 })
     .then(function(dbArticles) {
+      console.log('saved', dbArticles)
       res.render("saved", { articles: dbArticles });
     });
 });
